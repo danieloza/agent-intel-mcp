@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Intel Console</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <div class="orb orb-left"></div>
+      <div class="orb orb-right"></div>
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Agent Engineering Intelligence</p>
+          <h1>Agent Intel Console</h1>
+          <p class="lede">
+            Scan GitHub, cluster patterns, inspect local conventions, and review AGENTS.md guidance from one demo
+            surface.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <button id="refreshButton" class="primary">Run Fresh Scan</button>
+          <button id="stateButton" class="ghost">Load Cached State</button>
+        </div>
+      </header>
+
+      <section class="toolbar">
+        <label>
+          Local Path
+          <input id="localPath" placeholder="C:\path\to\repo" />
+        </label>
+        <label>
+          Max Repos
+          <input id="maxRepos" type="number" min="1" max="50" value="20" />
+        </label>
+        <label class="wide">
+          Queries
+          <textarea id="queries" rows="3" placeholder="One GitHub query per line"></textarea>
+        </label>
+      </section>
+
+      <section class="stats" id="stats"></section>
+
+      <main class="grid">
+        <section class="panel wide-panel">
+          <div class="panel-head">
+            <h2>Trend Radar</h2>
+            <span class="chip">sqlite history</span>
+          </div>
+          <div class="trend-grid">
+            <div class="trend-card">
+              <div class="trend-label">Coverage</div>
+              <svg id="coverageChart" class="chart" viewBox="0 0 320 120" preserveAspectRatio="none"></svg>
+            </div>
+            <div class="trend-card">
+              <div class="trend-label">Quality Pressure</div>
+              <svg id="qualityChart" class="chart" viewBox="0 0 320 120" preserveAspectRatio="none"></svg>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Signal Board</h2>
+            <span id="generatedAt" class="chip muted">idle</span>
+          </div>
+          <div id="signalBoard" class="stack"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Local Gaps</h2>
+            <span class="chip accent">repo fit</span>
+          </div>
+          <div id="localGaps" class="stack"></div>
+        </section>
+
+        <section class="panel wide-panel">
+          <div class="panel-head">
+            <h2>Pattern Clusters</h2>
+            <span class="chip">semantic view</span>
+          </div>
+          <div id="clusters" class="cluster-grid"></div>
+        </section>
+
+        <section class="panel wide-panel">
+          <div class="panel-head">
+            <h2>Suggestions</h2>
+            <span class="chip accent">agent patching</span>
+          </div>
+          <div id="suggestions" class="stack"></div>
+        </section>
+
+        <section class="panel wide-panel">
+          <div class="panel-head">
+            <h2>Patch Preview</h2>
+            <span class="chip muted">AGENTS.md</span>
+          </div>
+          <pre id="patch" class="code-block"></pre>
+        </section>
+
+        <section class="panel wide-panel">
+          <div class="panel-head">
+            <h2>Top Repositories</h2>
+            <span class="chip">GitHub scan</span>
+          </div>
+          <div id="repos" class="repo-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <template id="emptyState">
+      <div class="empty">Run a scan or load cached state to populate the console.</div>
+    </template>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+  </html>

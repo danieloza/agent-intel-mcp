@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: agent-intel-demo
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "4321"
+      - key: LOCAL_REPO_PATH
+        value: /app
+      - key: AGENT_INTEL_DATA_DIR
+        value: /var/data/agent-intel

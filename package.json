@@ -1,0 +1,73 @@
+{
+  "name": "agent-intel-mcp",
+  "version": "0.1.0",
+  "description": "OpenAI-powered developer intelligence MCP server focused on AGENTS.md evolution and GitHub pattern mining.",
+  "type": "module",
+  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./demo": "./dist/demo.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "AGENTS.md",
+    "docs",
+    "public"
+  ],
+  "bin": {
+    "agent-intel-mcp": "./dist/index.js",
+    "agent-intel-demo": "./dist/demo.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/index.ts",
+    "demo": "tsx src/demo.ts",
+    "demo:seed": "tsx src/demo/seed.ts",
+    "demo:start": "node dist/demo.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "prepublishOnly": "npm run lint && npm run test && npm run build",
+    "release:check": "npm pack --dry-run"
+  },
+  "keywords": [
+    "mcp",
+    "openai",
+    "github",
+    "agents-md",
+    "developer-intelligence"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danieloza/agent-intel-mcp.git"
+  },
+  "homepage": "https://github.com/danieloza/agent-intel-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/danieloza/agent-intel-mcp/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "@octokit/rest": "^22.0.0",
+    "better-sqlite3": "^12.4.1",
+    "dotenv": "^17.2.3",
+    "openai": "^6.8.1",
+    "pino": "^10.1.0",
+    "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^25.5.0",
+    "eslint": "^10.1.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.57.1",
+    "vitest": "^4.1.0"
+  }
+}
