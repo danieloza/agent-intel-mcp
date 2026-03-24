@@ -13,6 +13,14 @@ This version moves beyond a thin MVP:
 - SQLite-backed local memory for scans, clusters, suggestions, and dashboard history
 - CI, release, and deploy scaffolding for portfolio-ready delivery
 
+## What This Project Proves
+
+- OpenAI integration beyond chat wrappers
+- MCP server design for agent clients
+- GitHub mining and local repo analysis in one workflow
+- safe patch generation instead of blind repository mutation
+- TypeScript developer tooling with tests, CI, and release scaffolding
+
 ## Demo Preview
 
 ![Agent Intel Console desktop](docs/assets/dashboard-desktop.png)
@@ -42,6 +50,7 @@ This version moves beyond a thin MVP:
 ```
 
 More detail: [docs/ARCHITECTURE.md](/C:/Users/syfsy/projekty/agent-intel-mcp/docs/ARCHITECTURE.md)
+Case study: [docs/CASE_STUDY.md](/C:/Users/syfsy/projekty/agent-intel-mcp/docs/CASE_STUDY.md)
 
 ## Tools
 
@@ -159,6 +168,7 @@ After restart, the MCP client will see these tools:
 - Local dashboard served from `http://localhost:4321`
 - Real pipeline trigger: fresh scan, clustering, local gap analysis, patch preview, and history charts
 - Seeded portfolio state via `npm run demo:seed`
+- Safe patch preview keeps suggested `AGENTS.md` changes reviewable before any adoption
 - Frontend files: [public/index.html](/C:/Users/syfsy/projekty/agent-intel-mcp/public/index.html), [public/styles.css](/C:/Users/syfsy/projekty/agent-intel-mcp/public/styles.css), [public/app.js](/C:/Users/syfsy/projekty/agent-intel-mcp/public/app.js)
 
 ## Release Readiness
